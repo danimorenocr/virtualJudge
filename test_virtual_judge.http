@@ -17,6 +17,215 @@ Content-Type: application/json
   ]
 }
 
+
+### Problema: Fibonacci
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Secuencia de Fibonacci",
+  "description": "Escribe un programa que calcule el n-ésimo número de la secuencia de Fibonacci. La secuencia comienza con 0 y 1, y cada número siguiente es la suma de los dos anteriores (0, 1, 1, 2, 3, 5, 8, ...).",
+  "input_example": "6",
+  "output_example": "8",
+  "test_cases": [
+    { "input_data": "0", "expected_output": "0" },
+    { "input_data": "1", "expected_output": "1" },
+    { "input_data": "2", "expected_output": "1" },
+    { "input_data": "3", "expected_output": "2" },
+    { "input_data": "5", "expected_output": "5" },
+    { "input_data": "6", "expected_output": "8" },
+    { "input_data": "10", "expected_output": "55" },
+    { "input_data": "15", "expected_output": "610" }
+  ]
+}
+
+###
+
+### Problema: FizzBuzz
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "FizzBuzz",
+  "description": "Escribe un programa que reciba un número entero n. Si el número es divisible por 3, imprime 'Fizz'. Si es divisible por 5, imprime 'Buzz'. Si es divisible tanto por 3 como por 5, imprime 'FizzBuzz'. En cualquier otro caso, imprime el número mismo.",
+  "input_example": "15",
+  "output_example": "FizzBuzz",
+  "test_cases": [
+    { "input_data": "3", "expected_output": "Fizz" },
+    { "input_data": "5", "expected_output": "Buzz" },
+    { "input_data": "15", "expected_output": "FizzBuzz" },
+    { "input_data": "1", "expected_output": "1" },
+    { "input_data": "2", "expected_output": "2" },
+    { "input_data": "6", "expected_output": "Fizz" },
+    { "input_data": "10", "expected_output": "Buzz" },
+    { "input_data": "30", "expected_output": "FizzBuzz" }
+  ]
+}
+
+###
+
+### Problema: Potencia de un número
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Potencia de un número",
+  "description": "Escribe un programa que calcule x elevado a la potencia y (x^y), donde x e y son números enteros.",
+  "input_example": "2\n3",
+  "output_example": "8",
+  "test_cases": [
+    { "input_data": "2\n3", "expected_output": "8" },
+    { "input_data": "5\n0", "expected_output": "1" },
+    { "input_data": "1\n100", "expected_output": "1" },
+    { "input_data": "0\n0", "expected_output": "1" },
+    { "input_data": "3\n3", "expected_output": "27" },
+    { "input_data": "10\n2", "expected_output": "100" },
+    { "input_data": "2\n10", "expected_output": "1024" },
+    { "input_data": "9\n2", "expected_output": "81" }
+  ]
+}
+
+###
+
+### Problema: Tiempo en palabras
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Tiempo en palabras",
+  "description": "Escribe un programa que convierta la hora (en formato de 24 horas) a palabras. La entrada consiste en dos líneas: la primera línea contiene las horas (0-23) y la segunda línea contiene los minutos (0-59).",
+  "input_example": "5\n30",
+  "output_example": "cinco y media",
+  "test_cases": [
+    { "input_data": "5\n0", "expected_output": "cinco en punto" },
+    { "input_data": "5\n15", "expected_output": "cinco y cuarto" },
+    { "input_data": "5\n30", "expected_output": "cinco y media" },
+    { "input_data": "5\n45", "expected_output": "seis menos cuarto" },
+    { "input_data": "12\n0", "expected_output": "doce en punto" },
+    { "input_data": "0\n0", "expected_output": "medianoche" },
+    { "input_data": "12\n30", "expected_output": "doce y media" },
+    { "input_data": "23\n45", "expected_output": "medianoche menos cuarto" }
+  ]
+}
+
+###
+
+### Problema: Contador de palabras
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Contador de palabras",
+  "description": "Escribe un programa que cuente el número de palabras en una cadena de texto. Una palabra se define como una secuencia de caracteres separados por espacios.",
+  "input_example": "Hola mundo de la programación",
+  "output_example": "5",
+  "test_cases": [
+    { "input_data": "Hola mundo", "expected_output": "2" },
+    { "input_data": "Programación en Python", "expected_output": "3" },
+    { "input_data": "   Espacios   extras   ", "expected_output": "2" },
+    { "input_data": "uno", "expected_output": "1" },
+    { "input_data": "", "expected_output": "0" },
+    { "input_data": "a b c d e", "expected_output": "5" },
+    { "input_data": "¡Hola! ¿Cómo estás?", "expected_output": "3" },
+    { "input_data": "palabras-compuestas con_guiones", "expected_output": "2" }
+  ]
+}
+
+
+###
+
+### Problema: Búsqueda binaria
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Búsqueda binaria",
+  "description": "Implementa un algoritmo de búsqueda binaria. La entrada consiste en una lista ordenada de números enteros separados por espacios, seguida de un número a buscar. Imprime el índice de la primera ocurrencia del número (0-indexed) o -1 si no se encuentra.",
+  "input_example": "1 2 3 4 5 6 7 8 9 10\n5",
+  "output_example": "4",
+  "test_cases": [
+    { "input_data": "1 2 3 4 5 6 7 8 9 10\n5", "expected_output": "4" },
+    { "input_data": "1 3 5 7 9 11 13 15\n7", "expected_output": "3" },
+    { "input_data": "10 20 30 40 50\n25", "expected_output": "-1" },
+    { "input_data": "1 1 1 1 1 1 1\n1", "expected_output": "0" },
+    { "input_data": "5 10 15 20 25 30\n30", "expected_output": "5" },
+    { "input_data": "2 4 6 8 10 12 14 16\n2", "expected_output": "0" },
+    { "input_data": "2 4 6 8 10 12 14 16\n16", "expected_output": "7" },
+    { "input_data": "1 2 3 4 5\n6", "expected_output": "-1" }
+  ]
+}
+
+###
+
+### Problema: Validación de paréntesis
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Validación de paréntesis",
+  "description": "Escribe un programa que determine si una cadena de paréntesis, corchetes y llaves está equilibrada. Es decir, cada paréntesis de apertura debe tener un correspondiente paréntesis de cierre en el orden correcto.",
+  "input_example": "([{}])",
+  "output_example": "true",
+  "test_cases": [
+    { "input_data": "([{}])", "expected_output": "true" },
+    { "input_data": "()[]{}", "expected_output": "true" },
+    { "input_data": "(]", "expected_output": "false" },
+    { "input_data": "([)]", "expected_output": "false" },
+    { "input_data": "{[]}", "expected_output": "true" },
+    { "input_data": "((()))", "expected_output": "true" },
+    { "input_data": "{", "expected_output": "false" },
+    { "input_data": ")", "expected_output": "false" },
+    { "input_data": "{(})", "expected_output": "false" },
+    { "input_data": "", "expected_output": "true" }
+  ]
+}
+
+###
+
+### Problema: Ordenamiento por mezcla (Merge Sort)
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Ordenamiento por mezcla (Merge Sort)",
+  "description": "Implementa el algoritmo de ordenamiento por mezcla (Merge Sort). La entrada es una lista de números separados por espacios. La salida debe ser la lista ordenada de menor a mayor.",
+  "input_example": "38 27 43 3 9 82 10",
+  "output_example": "3 9 10 27 38 43 82",
+  "test_cases": [
+    { "input_data": "38 27 43 3 9 82 10", "expected_output": "3 9 10 27 38 43 82" },
+    { "input_data": "5 1 4 2 8", "expected_output": "1 2 4 5 8" },
+    { "input_data": "9 8 7 6 5 4 3 2 1", "expected_output": "1 2 3 4 5 6 7 8 9" },
+    { "input_data": "1", "expected_output": "1" },
+    { "input_data": "10 10 10 10", "expected_output": "10 10 10 10" },
+    { "input_data": "-5 -10 0 -3 8 5 -1", "expected_output": "-10 -5 -3 -1 0 5 8" },
+    { "input_data": "100 50 25 75 12 88 94 62", "expected_output": "12 25 50 62 75 88 94 100" },
+    { "input_data": "", "expected_output": "" }
+  ]
+}
+
+###
+
+### Problema: Distancia de Hamming
+POST http://127.0.0.1:8000/problems/
+Content-Type: application/json
+
+{
+  "title": "Distancia de Hamming",
+  "description": "Calcula la distancia de Hamming entre dos cadenas de igual longitud. La distancia de Hamming es el número de posiciones en las que los símbolos correspondientes son diferentes. La entrada consiste en dos líneas, cada una con una cadena.",
+  "input_example": "karolin\nkathrin",
+  "output_example": "3",
+  "test_cases": [
+    { "input_data": "karolin\nkathrin", "expected_output": "3" },
+    { "input_data": "hello\nworld", "expected_output": "4" },
+    { "input_data": "1011101\n1001001", "expected_output": "2" },
+    { "input_data": "2173896\n2233796", "expected_output": "3" },
+    { "input_data": "toned\ncodes", "expected_output": "3" },
+    { "input_data": "abcde\nabcde", "expected_output": "0" },
+    { "input_data": "01010\n10101", "expected_output": "5" },
+    { "input_data": "python\npythop", "expected_output": "1" }
+  ]
+}
+
 ###
 
 ### Obtener todos los problemas
@@ -71,3 +280,5 @@ Content-Type: application/json
   "language": "python",
   "problem_id": 2
 }
+
+
