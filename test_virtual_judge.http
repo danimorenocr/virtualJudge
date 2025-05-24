@@ -281,4 +281,46 @@ Content-Type: application/json
   "problem_id": 2
 }
 
+###
+
+### Borrar problema por ID
+DELETE http://127.0.0.1:8000/problems/21
+
+###
+
+### Borrar problema que no existe
+DELETE http://127.0.0.1:8000/problems/999
+
+###
+
+### Editar problema
+PUT http://127.0.0.1:8000/problems/22
+Content-Type: application/json
+
+{
+  "title": "Secuencia de Fibonacci (Actualizado)",
+  "description": "Calcula el n-ésimo término de la famosa secuencia de Fibonacci. La secuencia comienza con 0 y 1, y cada número siguiente es la suma de los dos anteriores. Esta versión actualizada es más clara.",
+  "test_cases": [
+    { "input_data": "0", "expected_output": "0" },
+    { "input_data": "1", "expected_output": "1" },
+    { "input_data": "2", "expected_output": "1" },
+    { "input_data": "3", "expected_output": "2" },
+    { "input_data": "5", "expected_output": "5" },
+    { "input_data": "6", "expected_output": "8" },
+    { "input_data": "10", "expected_output": "55" },
+    { "input_data": "15", "expected_output": "610" },
+    { "input_data": "20", "expected_output": "6765" }
+  ]
+}
+
+###
+
+### Editar sólo el título de un problema
+PUT http://127.0.0.1:8000/problems/23
+Content-Type: application/json
+
+{
+  "title": "FizzBuzz Challenge"
+}
+
 
